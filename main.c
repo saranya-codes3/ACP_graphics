@@ -26,10 +26,27 @@ void displayCanvas() {
     }
 }
 
+// Function to draw rectangle
+void drawRectangle(int row, int col, int height, int width) {
+
+    for(int i = row; i < row + height && i < ROWS; i++) {
+
+        for(int j = col; j < col + width && j < COLS; j++) {
+
+            canvas[i][j] = '*';
+        }
+    }
+}
+
 int main() {
 
     initializeCanvas(); // Fill canvas with _
-    displayCanvas();    // Display canvas
+
+    // Draw rectangle
+    drawRectangle(2, 5, 4, 8);
+
+    // Display canvas
+    displayCanvas();
 
     return 0;
 }
