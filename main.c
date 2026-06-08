@@ -26,7 +26,7 @@ void displayCanvas() {
     }
 }
 
-// Rectangle
+// Function to draw rectangle
 void drawRectangle(int row, int col, int height, int width) {
 
     for(int i = row; i < row + height && i < ROWS; i++) {
@@ -38,9 +38,10 @@ void drawRectangle(int row, int col, int height, int width) {
     }
 }
 
-// Line
+// Function to draw line
 void drawLine(int row1, int col1, int row2, int col2) {
 
+    // Horizontal line
     if(row1 == row2) {
 
         for(int j = col1; j <= col2; j++) {
@@ -48,15 +49,20 @@ void drawLine(int row1, int col1, int row2, int col2) {
         }
     }
 
+    // Vertical line
     else if(col1 == col2) {
 
         for(int i = row1; i <= row2; i++) {
             canvas[i][col1] = '*';
         }
     }
+
+    else {
+        printf("Only horizontal and vertical lines allowed!\n");
+    }
 }
 
-// Triangle
+// Function to draw triangle
 void drawTriangle(int row, int col, int height) {
 
     for(int i = 0; i < height; i++) {
@@ -68,7 +74,7 @@ void drawTriangle(int row, int col, int height) {
     }
 }
 
-// Circle
+// Function to draw circle
 void drawCircle(int centerRow, int centerCol, int radius) {
 
     for(int i = 0; i < ROWS; i++) {
@@ -88,21 +94,58 @@ void drawCircle(int centerRow, int centerCol, int radius) {
 
 int main() {
 
+    int choice;
+
     initializeCanvas();
 
-    // Rectangle
-    drawRectangle(2, 5, 4, 8);
+    do {
 
-    // Line
-    drawLine(10, 5, 10, 20);
+        printf("\n===== 2D Graphics Editor =====\n");
+        printf("1. Add Rectangle\n");
+        printf("2. Add Line\n");
+        printf("3. Add Triangle\n");
+        printf("4. Add Circle\n");
+        printf("5. Display Canvas\n");
+        printf("6. Exit\n");
 
-    // Triangle
-    drawTriangle(12, 25, 5);
+        printf("Enter choice: ");
+        scanf("%d", &choice);
 
-    // Circle
-    drawCircle(8, 30, 3);
+        switch(choice) {
 
-    displayCanvas();
+            case 1:
+                drawRectangle(2, 5, 4, 8);
+                printf("Rectangle Added!\n");
+                break;
+
+            case 2:
+                drawLine(10, 5, 10, 20);
+                printf("Line Added!\n");
+                break;
+
+            case 3:
+                drawTriangle(12, 25, 5);
+                printf("Triangle Added!\n");
+                break;
+
+            case 4:
+                drawCircle(8, 30, 3);
+                printf("Circle Added!\n");
+                break;
+
+            case 5:
+                displayCanvas();
+                break;
+
+            case 6:
+                printf("Exiting Program...\n");
+                break;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+
+    } while(choice != 6);
 
     return 0;
 }
