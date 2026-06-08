@@ -26,7 +26,7 @@ void displayCanvas() {
     }
 }
 
-// Function to draw rectangle
+// Rectangle
 void drawRectangle(int row, int col, int height, int width) {
 
     for(int i = row; i < row + height && i < ROWS; i++) {
@@ -38,10 +38,9 @@ void drawRectangle(int row, int col, int height, int width) {
     }
 }
 
-// Function to draw line
+// Line
 void drawLine(int row1, int col1, int row2, int col2) {
 
-    // Horizontal line
     if(row1 == row2) {
 
         for(int j = col1; j <= col2; j++) {
@@ -49,20 +48,15 @@ void drawLine(int row1, int col1, int row2, int col2) {
         }
     }
 
-    // Vertical line
     else if(col1 == col2) {
 
         for(int i = row1; i <= row2; i++) {
             canvas[i][col1] = '*';
         }
     }
-
-    else {
-        printf("Only horizontal and vertical lines allowed!\n");
-    }
 }
 
-// Function to draw triangle
+// Triangle
 void drawTriangle(int row, int col, int height) {
 
     for(int i = 0; i < height; i++) {
@@ -70,6 +64,24 @@ void drawTriangle(int row, int col, int height) {
         for(int j = 0; j <= i; j++) {
 
             canvas[row + i][col + j] = '*';
+        }
+    }
+}
+
+// Circle
+void drawCircle(int centerRow, int centerCol, int radius) {
+
+    for(int i = 0; i < ROWS; i++) {
+
+        for(int j = 0; j < COLS; j++) {
+
+            int dx = i - centerRow;
+            int dy = j - centerCol;
+
+            if(dx * dx + dy * dy <= radius * radius) {
+
+                canvas[i][j] = '*';
+            }
         }
     }
 }
@@ -86,6 +98,9 @@ int main() {
 
     // Triangle
     drawTriangle(12, 25, 5);
+
+    // Circle
+    drawCircle(8, 30, 3);
 
     displayCanvas();
 
