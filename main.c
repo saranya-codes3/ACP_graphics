@@ -62,17 +62,31 @@ void drawLine(int row1, int col1, int row2, int col2) {
     }
 }
 
+// Function to draw triangle
+void drawTriangle(int row, int col, int height) {
+
+    for(int i = 0; i < height; i++) {
+
+        for(int j = 0; j <= i; j++) {
+
+            canvas[row + i][col + j] = '*';
+        }
+    }
+}
+
 int main() {
 
-    initializeCanvas(); // Fill canvas with _
+    initializeCanvas();
 
-    // Draw rectangle
+    // Rectangle
     drawRectangle(2, 5, 4, 8);
 
-    // Draw line
+    // Line
     drawLine(10, 5, 10, 20);
 
-    // Display canvas
+    // Triangle
+    drawTriangle(12, 25, 5);
+
     displayCanvas();
 
     return 0;
