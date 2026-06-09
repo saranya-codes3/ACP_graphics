@@ -5,7 +5,7 @@
 
 char canvas[ROWS][COLS];
 
-// Function to initialize canvas with _
+// Function to initialize canvas
 void initializeCanvas() {
     for(int i = 0; i < ROWS; i++) {
         for(int j = 0; j < COLS; j++) {
@@ -92,6 +92,18 @@ void drawCircle(int centerRow, int centerCol, int radius) {
     }
 }
 
+// Function to delete object
+void deleteObject(int row, int col, int height, int width) {
+
+    for(int i = row; i < row + height && i < ROWS; i++) {
+
+        for(int j = col; j < col + width && j < COLS; j++) {
+
+            canvas[i][j] = '_';
+        }
+    }
+}
+
 int main() {
 
     int choice;
@@ -105,8 +117,9 @@ int main() {
         printf("2. Add Line\n");
         printf("3. Add Triangle\n");
         printf("4. Add Circle\n");
-        printf("5. Display Canvas\n");
-        printf("6. Exit\n");
+        printf("5. Delete Object\n");
+        printf("6. Display Canvas\n");
+        printf("7. Exit\n");
 
         printf("Enter choice: ");
         scanf("%d", &choice);
@@ -134,10 +147,15 @@ int main() {
                 break;
 
             case 5:
-                displayCanvas();
+                deleteObject(2, 5, 2, 4);
+                printf("Object Deleted!\n");
                 break;
 
             case 6:
+                displayCanvas();
+                break;
+
+            case 7:
                 printf("Exiting Program...\n");
                 break;
 
@@ -145,7 +163,7 @@ int main() {
                 printf("Invalid Choice!\n");
         }
 
-    } while(choice != 6);
+    } while(choice != 7);
 
     return 0;
 }
