@@ -118,8 +118,9 @@ int main() {
         printf("3. Add Triangle\n");
         printf("4. Add Circle\n");
         printf("5. Delete Object\n");
-        printf("6. Display Canvas\n");
-        printf("7. Exit\n");
+        printf("6. Modify Object\n");
+        printf("7. Display Canvas\n");
+        printf("8. Exit\n");
 
         printf("Enter choice: ");
         scanf("%d", &choice);
@@ -152,10 +153,16 @@ int main() {
                 break;
 
             case 6:
-                displayCanvas();
+                deleteObject(2, 5, 4, 8);
+                drawRectangle(5, 15, 3, 6);
+                printf("Object Modified!\n");
                 break;
 
             case 7:
+                displayCanvas();
+                break;
+
+            case 8:
                 printf("Exiting Program...\n");
                 break;
 
@@ -163,7 +170,7 @@ int main() {
                 printf("Invalid Choice!\n");
         }
 
-    } while(choice != 7);
+    } while(choice != 8);
 
     return 0;
 }
