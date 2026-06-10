@@ -1,0 +1,111 @@
+MINI PROJECT: 2D GRAPHICS EDITOR IN C
+GEN AI PROMPTS AND RESPONSES
+
+PROMPT 1:
+Create a basic 2D canvas in C using a 2D character array filled with underscore (_).
+
+RESPONSE:
+Generated C code to create a 20x40 canvas using a 2D character array. Added initializeCanvas() function to fill the canvas with underscore (_) and displayCanvas() function to print the canvas.
+
+---
+
+PROMPT 2:
+Add rectangle drawing functionality to my existing canvas code in C.
+
+RESPONSE:
+Generated drawRectangle() function using nested loops to draw rectangles using the '*' character on the canvas.
+
+---
+
+PROMPT 3:
+Add a line drawing function to my rectangle and canvas code in C.
+
+RESPONSE:
+Generated drawLine() function to draw horizontal and vertical lines using '*' characters.
+
+---
+
+PROMPT 4:
+Add triangle drawing functionality to my existing 2D graphics editor code.
+
+RESPONSE:
+Generated drawTriangle() function using nested loops to create a right-angle triangle using '*' characters.
+
+---
+
+PROMPT 5:
+Add circle drawing functionality to my 2D graphics editor in C.
+
+RESPONSE:
+Generated drawCircle() function using a radius-based mathematical formula to create a circular shape using '*' characters.
+
+---
+
+PROMPT 6:
+Convert my graphics editor into a menu-driven program in C.
+
+RESPONSE:
+Generated a menu-driven system using switch-case statements for user options such as adding rectangle, line, triangle, circle, displaying canvas and exiting program.
+
+---
+
+PROMPT 7:
+Add object functionality to the menu-driven graphics editor.
+
+RESPONSE:
+Updated code to allow adding multiple graphical objects such as rectangle, line, triangle and circle to the canvas.
+
+---
+
+PROMPT 8:
+Add delete object functionality to my 2D graphics editor in C.
+
+RESPONSE:
+Generated deleteObject() function to replace '*' characters with '_' in a selected area to simulate deleting an object.
+
+---
+
+PROMPT 9:
+Add modify object functionality to my graphics editor project.
+
+RESPONSE:
+Modified the code to delete an existing object and redraw it in another location to simulate object modification.
+
+---
+
+PROMPT 10:
+How to create a GitHub repository and push code using VS Code.
+
+RESPONSE:
+Provided step-by-step guidance to initialize git, create commits, connect GitHub repository, and push project files using git commands.
+---
+
+PROMPT 11:
+Give complete code by combining the previous canvas, rectangle, line and triangle code.
+
+RESPONSE:
+Combined all previously generated functions into one complete C program.
+
+---
+
+PROMPT 12:
+How to compile and run the C code in VS Code terminal.
+
+RESPONSE:
+Provided gcc commands to compile and run the project using terminal.
+
+---
+
+PROMPT 13:
+How to push updates to GitHub daily.
+
+RESPONSE:
+Explained git add, git commit and git push commands for maintaining daily project updates.
+
+---
+
+PROMPT 14:
+Give final complete code for the mini project with add, delete and modify object functionalities.
+
+RESPONSE:
+Generated final integrated code for the 2D Graphics Editor with menu-driven operations and graphical object management.
